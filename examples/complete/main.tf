@@ -1,6 +1,6 @@
 module "label1" {
-  source      = "git::https://github.com/cloudposse/terraform-null-label.git?ref=master"
-  namespace   = "CloudPosse"
+  source      = "git::https://github.com/marcelocorreia/terraform-null-label.git?ref=master"
+  namespace   = "marcelocorreia"
   environment = "UAT"
   stage       = "build"
   name        = "Winston Churchroom"
@@ -16,7 +16,7 @@ module "label1" {
 }
 
 module "label2" {
-  source    = "git::https://github.com/cloudposse/terraform-null-label.git?ref=master"
+  source    = "git::https://github.com/marcelocorreia/terraform-null-label.git?ref=master"
   context   = "${module.label1.context}"
   name      = "Charlie"
   stage     = "test"
@@ -29,7 +29,7 @@ module "label2" {
 }
 
 module "label3" {
-  source    = "git::https://github.com/cloudposse/terraform-null-label.git?ref=master"
+  source    = "git::https://github.com/marcelocorreia/terraform-null-label.git?ref=master"
   name      = "Starfish"
   stage     = "release"
   context   = "${module.label1.context}"
